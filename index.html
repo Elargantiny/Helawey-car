@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Helawey Car Rental | احجز سيارتك الآن</title>
+<meta name="description" content="حجز وإدارة تأجير السيارات">
+<meta property="og:title" content="Helawey Car Rental"><meta property="og:description" content="احجز سيارتك الآن بسهولة"><meta property="og:type" content="website">
+<link rel="canonical" href="https://elargantiny.github.io/Helawey-car/"><link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<style>
+:root{--a:#e8a33d;--n:#0b1b2b;--a-dark:#c6822a}*{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Tajawal,Cairo,Arial,sans-serif;color:#172033}h1,h2,h3,h4,.font-display{font-family:Cairo,Tajawal,Arial,sans-serif}button,input,select,textarea{font:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.72rem 1rem;border-radius:.8rem;font-weight:800;transition:filter .18s,transform .18s,box-shadow .18s}.btn:hover{filter:brightness(1.05);transform:translateY(-1px)}.btn:active{transform:translateY(0)}
+.p{background:var(--a);color:#1a1200}.d{background:var(--n);color:#fff}.l{background:#f1f4f8;color:#172033}.r{background:#dc2626;color:#fff}.g{background:#16a34a;color:#fff}
+.card{background:#fff;border:1px solid #e9edf1;border-radius:1.15rem;box-shadow:0 4px 18px #0b1b2b0b;transition:box-shadow .2s,border-color .2s}.card:hover{box-shadow:0 12px 28px #0b1b2b17;border-color:#e8a33d55}.hero{background:radial-gradient(ellipse at 78% 10%,#213954 0,transparent 43%),linear-gradient(135deg,#07111d,#0b1b2b 58%,#122a42);color:#fff}
+.modal{background:#020617aa;backdrop-filter:blur(5px)}.step.on{background:var(--a);color:#1a1200}.step.done{background:#dcfce7;color:#166534}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+.print{display:none}@media print{body>*{display:none!important}.print{display:block!important}@page{margin:12mm}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media(max-width:640px){.btn{min-height:44px}.card{border-radius:1rem}#booking>div{margin-top:0;margin-bottom:0;min-height:100%}#booking{padding:.5rem}}
+</style>
+</head>
+<body class="bg-white">
+<header class="bg-[#0b1b2b] text-white"><div class="max-w-7xl mx-auto px-4 py-2 flex justify-between text-sm"><span id="phoneTop">010XXXXXXXX</span><a id="waTop" target="_blank" rel="noopener" class="text-green-300">واتساب</a></div></header>
+<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b"><div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center gap-3">
+<a href="#home" class="flex items-center gap-3"><span class="w-11 h-11 rounded-xl bg-[var(--n)] grid place-items-center overflow-hidden relative shrink-0" aria-hidden="false"><img id="logo" src="assets/hellawy-car-logo.png" alt="شعار Helawey Car Rental" style="position:absolute;width:155%;height:155%;max-width:none;left:-27.5%;top:-13%;object-fit:cover"></span><span><b id="office" class="block">Helawey Car Rental</b><small class="text-slate-500">تأجير موثوق وحجز سهل</small></span></a>
+<div class="hidden md:flex gap-5 items-center font-bold text-sm"><a href="#cars">السيارات</a><a href="#how">كيف نعمل</a><a href="#why">لماذا نحن</a><a href="#contact">تواصل معنا</a><button id="adminBtn" type="button" class="btn d py-2" onclick="adminOpen()">الإدارة</button></div>
+<div class="md:hidden flex gap-2"><a id="waMobile" class="btn g py-2" target="_blank">واتساب</a><button id="menuBtn" class="btn l py-2">☰</button></div></div>
+<div id="menu" class="hidden md:hidden border-t p-3"><div class="grid gap-2 font-bold"><a href="#cars" class="p-2">السيارات</a><a href="#how" class="p-2">كيف نعمل</a><a href="#why" class="p-2">لماذا نحن</a><a href="#contact" class="p-2">تواصل معنا</a><button id="adminBtn2" type="button" class="btn d" onclick="adminOpen()">الإدارة</button></div></div></nav>
+<main>
+<section id="home" class="hero"><div class="max-w-5xl mx-auto px-4 py-16 md:py-28 text-center"><span class="inline-block bg-white/10 rounded-full px-4 py-2 text-sm">● احجز سيارتك بثقة</span><h1 class="text-4xl md:text-6xl font-black mt-5 leading-tight">سيارتك جاهزة.<br><span class="text-[var(--a)]">رحلتك تبدأ الآن.</span></h1><p class="text-slate-300 text-lg leading-8 mt-5 max-w-3xl mx-auto">اختر السيارة والمدة والسائق، وأرسل طلبك. سنراجع الطلب ونتواصل معك لتأكيد الحجز.</p><div class="flex justify-center flex-wrap gap-3 mt-7"><a href="#cars" class="btn p">احجز سيارتك الآن</a><a id="heroWa" class="btn bg-white/10 text-white" target="_blank">واتساب</a></div></div></section>
+<section id="cars" class="max-w-7xl mx-auto px-4 py-14"><div class="flex justify-between items-end mb-6"><div><span class="text-[var(--a)] font-bold">أسطولنا</span><h2 class="text-3xl font-black">السيارات المتاحة</h2></div><span id="carCount" class="text-sm text-slate-500"></span></div><div id="carsGrid" class="grid sm:grid-cols-2 xl:grid-cols-4 gap-5"></div><div id="emptyCars" class="hidden card p-10 text-center text-slate-500">لا توجد سيارات متاحة حاليًا.</div></section>
+<section id="how" class="bg-slate-50 border-y"><div class="max-w-7xl mx-auto px-4 py-14"><h2 class="text-3xl font-black text-center">كيف يتم الحجز؟</h2><div class="grid md:grid-cols-4 gap-4 mt-8"><div class="card p-5"><b>١. اختر السيارة</b><p class="text-sm text-slate-500 mt-2">قارن السيارات والأسعار.</p></div><div class="card p-5"><b>٢. حدد المدة</b><p class="text-sm text-slate-500 mt-2">حدد الاستلام والتسليم.</p></div><div class="card p-5"><b>٣. أرسل البيانات</b><p class="text-sm text-slate-500 mt-2">المستندات المطلوبة.</p></div><div class="card p-5"><b>٤. نؤكد الحجز</b><p class="text-sm text-slate-500 mt-2">نتواصل معك للتأكيد.</p></div></div></div></section>
+<section id="why" class="max-w-7xl mx-auto px-4 py-14"><div class="grid md:grid-cols-2 gap-8"><div><span class="text-[var(--a)] font-bold">لماذا نحن؟</span><h2 class="text-3xl font-black mt-2">تجربة تأجير واضحة وبسيطة</h2><div class="grid sm:grid-cols-2 gap-4 mt-6"><div class="card p-5"><b>أسعار واضحة</b><p class="text-sm text-slate-500 mt-2">السيارة والسائق والعربون واضحون.</p></div><div class="card p-5"><b>مرونة</b><p class="text-sm text-slate-500 mt-2">مع أو بدون سائق.</p></div><div class="card p-5"><b>موبايل أولًا</b><p class="text-sm text-slate-500 mt-2">مصمم لـ Android Chrome.</p></div><div class="card p-5"><b>خصوصية</b><p class="text-sm text-slate-500 mt-2">المستندات ليست عامة.</p></div></div></div><div class="bg-[#0b1b2b] text-white rounded-3xl p-8"><div class="text-5xl">🛡️</div><h3 class="text-2xl font-black mt-5">تنبيه الخصوصية</h3><p id="privacyPublic" class="text-slate-300 leading-8 mt-3">يتم استخدام المستندات المقدمة فقط لأغراض التحقق وإتمام عملية التأجير.</p></div></div></section>
+<section id="contact" class="bg-slate-50 border-t"><div class="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-6"><div><span class="text-[var(--a)] font-bold">تواصل معنا</span><h2 class="text-3xl font-black mt-2">نحن جاهزون لمساعدتك</h2><p id="address" class="mt-5 font-bold"></p><p id="phone" class="mt-2"></p></div><div class="card p-6 flex flex-wrap gap-3"><a id="maps" class="btn l" target="_blank">📍 خرائط Google</a><a id="fb" class="btn l" target="_blank">Facebook</a><a id="ig" class="btn l" target="_blank">Instagram</a><a id="wa" class="btn g" target="_blank">واتساب</a></div></div></section>
+</main><footer class="bg-[#0b1b2b] text-white"><div class="max-w-7xl mx-auto px-4 py-7 flex justify-between text-sm"><span id="foot">Helawey Car Rental</span><span>© <span id="year"></span></span></div></footer>
+
+<!-- Booking -->
+<div id="booking" class="hidden fixed inset-0 z-50 modal p-3 overflow-y-auto"><div class="max-w-4xl mx-auto my-4 bg-white rounded-3xl overflow-hidden"><div class="p-5 border-b flex justify-between"><div><h2 class="text-2xl font-black">إتمام الحجز</h2><small class="text-slate-500">طلب حجز جديد</small></div><button class="btn l" data-close="booking">✕</button></div><div class="p-5"><div class="grid grid-cols-4 gap-2 text-xs font-bold"><div class="step on p-2 rounded text-center">السيارة</div><div class="step bg-slate-100 p-2 rounded text-center">المدة</div><div class="step bg-slate-100 p-2 rounded text-center">البيانات</div><div class="step bg-slate-100 p-2 rounded text-center">الدفع</div></div></div>
+<form id="bookForm" class="p-5" novalidate>
+<div data-s="1"><div id="chosen" class="card p-4 flex gap-4 items-center"></div><button type="button" id="s2" class="btn p w-full mt-5">التالي</button></div>
+<div data-s="2" class="hidden"><div class="grid md:grid-cols-2 gap-4"><label>تاريخ الاستلام<input id="pd" type="date" required class="w-full border rounded-xl p-3 mt-2"></label><label>وقت الاستلام<input id="pt" type="time" value="10:00" required class="w-full border rounded-xl p-3 mt-2"></label><label>تاريخ التسليم<input id="rd" type="date" required class="w-full border rounded-xl p-3 mt-2"></label><label>وقت التسليم<input id="rt" type="time" value="10:00" required class="w-full border rounded-xl p-3 mt-2"></label></div><div class="grid grid-cols-2 gap-3 mt-5"><label><input class="peer sr-only" type="radio" name="driver" value="false" checked><span class="block border rounded-xl p-4 text-center peer-checked:border-[var(--a)]">بدون سائق</span></label><label><input class="peer sr-only" type="radio" name="driver" value="true"><span class="block border rounded-xl p-4 text-center peer-checked:border-[var(--a)]">بـسائق</span></label></div><div id="sum2" class="bg-slate-50 rounded-2xl p-4 mt-4"></div><div class="flex gap-2 mt-4"><button type="button" class="btn l flex-1" data-prev="1">السابق</button><button type="button" id="s3" class="btn p flex-1">التالي</button></div></div>
+<div data-s="3" class="hidden"><div class="grid md:grid-cols-2 gap-4"><label>الاسم بالكامل<input id="name" maxlength="100" required class="w-full border rounded-xl p-3 mt-2"></label><label>رقم الهاتف<input id="custPhone" required inputmode="tel" maxlength="20" placeholder="01012345678" class="w-full border rounded-xl p-3 mt-2"></label><label>واتساب (اختياري)<input id="custWa" inputmode="tel" maxlength="20" class="w-full border rounded-xl p-3 mt-2"></label><label>الرقم القومي<input id="nid" required inputmode="numeric" maxlength="14" class="w-full border rounded-xl p-3 mt-2"></label><label class="md:col-span-2">العنوان<input id="addr" required maxlength="250" class="w-full border rounded-xl p-3 mt-2"></label><label>البريد الإلكتروني<input id="email" type="email" class="w-full border rounded-xl p-3 mt-2"></label></div><div class="grid md:grid-cols-3 gap-3 mt-5"><label class="card p-4">الرقم القومي أمام<input id="idf" type="file" accept="image/*,.pdf" required class="mt-2 w-full text-sm"><small id="idf_i"></small></label><label class="card p-4">الرقم القومي خلف<input id="idb" type="file" accept="image/*,.pdf" required class="mt-2 w-full text-sm"><small id="idb_i"></small></label><label class="card p-4">رخصة القيادة<input id="lic" type="file" accept="image/*,.pdf" class="mt-2 w-full text-sm"><small id="lic_i"></small></label></div><p class="text-xs bg-amber-50 p-3 rounded-xl mt-4">يتم استخدام المستندات المقدمة فقط لأغراض التحقق وإتمام عملية التأجير.</p><div class="flex gap-2 mt-4"><button type="button" class="btn l flex-1" data-prev="2">السابق</button><button type="button" id="s4" class="btn p flex-1">التالي</button></div></div>
+<div data-s="4" class="hidden"><div id="payMethods" class="grid md:grid-cols-3 gap-3"></div><div id="payFields" class="mt-4"></div><div id="final" class="mt-4"></div><label class="flex gap-2 mt-4"><input id="terms" type="checkbox" required class="w-5 h-5">
+<span>أوافق على <button id="termsBtn" type="button" class="text-[var(--a)] underline font-bold">الشروط والأحكام وسياسة البيانات</button>.</span></label><div class="flex gap-2 mt-4"><button type="button" class="btn l flex-1" data-prev="3">السابق</button><button type="submit" id="submit" class="btn p flex-1">إرسال طلب الحجز</button></div></div>
+</form></div></div>
+
+<div id="success" class="hidden fixed inset-0 z-[60] modal p-4"><div class="max-w-lg mx-auto mt-12 bg-white rounded-3xl p-7 text-center"><div class="text-5xl">✓</div><h2 class="text-2xl font-black mt-3">تم إرسال طلب الحجز بنجاح</h2><p class="text-slate-500 mt-2">سنراجع الطلب ونتواصل معك للتأكيد.</p><div class="bg-slate-50 rounded-2xl p-5 mt-4"><small>رقم الحجز</small><div id="successId" class="text-2xl text-[var(--a)] font-black"></div></div><div class="grid sm:grid-cols-3 gap-2 mt-5"><a id="successWa" class="btn g" target="_blank">واتساب</a><button id="successPrint" class="btn l">طباعة</button><button id="successClose" class="btn d">الرئيسية</button></div></div></div>
+
+<!-- Admin -->
+<div id="admin" class="hidden fixed inset-0 z-50 modal p-2 sm:p-5 overflow-y-auto"><div class="max-w-7xl mx-auto bg-slate-50 rounded-3xl min-h-[95vh] overflow-hidden"><div id="login" class="min-h-[90vh] grid place-items-center p-5"><div class="bg-white rounded-3xl shadow-xl p-7 w-full max-w-md"><div class="text-center text-5xl">🔐</div><h2 class="text-2xl font-black text-center mt-3">دخول الإدارة</h2><div class="flex mt-5"><input id="pin" type="password" inputmode="numeric" maxlength="20" class="w-full border rounded-r-xl p-3"><button id="showPin" type="button" class="btn l rounded-r-none">إظهار</button></div><button id="loginBtn" class="btn d w-full mt-3">دخول</button><button class="btn l w-full mt-2" data-close="admin">إلغاء</button><p id="localWarn" class="text-xs bg-amber-50 p-3 rounded-xl mt-4"></p></div></div>
+<div id="panel" class="hidden"><div class="bg-[#0b1b2b] text-white p-4 flex justify-between items-center gap-3"><div><b class="text-xl">لوحة الإدارة</b><small id="conn" class="block text-slate-300"></small></div><div class="flex gap-2"><button id="refresh" class="btn bg-white/10 text-white">تحديث</button><button id="logout" class="btn r">خروج</button><button class="btn bg-white/10 text-white" data-close="admin">إغلاق</button></div></div><div class="p-3 sm:p-5"><div id="tabs" class="flex gap-2 overflow-x-auto pb-2"></div><div id="adminContent"></div></div></div></div></div>
+<div id="modal" class="hidden fixed inset-0 z-[80] modal p-3 overflow-y-auto"><div class="max-w-4xl mx-auto mt-6 bg-white rounded-3xl"><div class="p-5 border-b flex justify-between"><h3 id="mt" class="font-black text-xl"></h3><button id="mc" class="btn l">✕</button></div><div id="mb" class="p-5"></div></div></div>
+<div id="toasts" class="fixed bottom-4 left-4 z-[100] space-y-2 w-[min(92vw,380px)]"></div><div id="print" class="print"></div>
+
+<script>
+// ============================================================
+// CAR RENTAL APPLICATION CONFIGURATION
+// ============================================================
+// =====================================================
+// CHANGE DEFAULT ADMIN PIN HERE
+// Default PIN: 1234
+// (Local demo mode only. When GOOGLE_APPS_SCRIPT_URL is set, the PIN is checked on the server and this value is unused.)
+// IMPORTANT: Client-side PIN protection is NOT real
+// security. For production use, move authentication
+// to the backend / Firebase / Supabase / Apps Script.
+// =====================================================
+const ADMIN_PIN="1234";
+const VODAFONE_CASH_NUMBER="01092851077";
+const INSTAPAY_HANDLE="CASH-HelaweyCarRental";
+const GOOGLE_APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbz1o52sctL97R5JQijSHJZJJJJzzNw9VpYDzYSdw3L_zgFFEX1Arfrq_KfJAUirqTip/exec";
+const OFFICE_WHATSAPP="01092851077";
+const OFFICE_PHONE="01092851077";
+const CURRENCY="EGP";
+
+const K={cars:"carRental_cars",bookings:"carRental_bookings",settings:"carRental_settings",customers:"carRental_customers",session:"carRental_session",pending:"carRental_pendingSync"};
+const DEF={officeName:"Helawey Car Rental",logo:"🚗",phone:OFFICE_PHONE,whatsapp:OFFICE_WHATSAPP,address:"أضف العنوان من الإعدادات",mapsUrl:"#",facebookUrl:"#",instagramUrl:"#",websiteUrl:"#",vodafoneCash:VODAFONE_CASH_NUMBER,instapay:INSTAPAY_HANDLE,driverDailyRate:300,defaultDeposit:1000,driverDepositAdjustment:0,driverChangesDeposit:false,currency:CURRENCY,accentColor:"#e8a33d",bookingTerms:"أوافق على شروط وأحكام تأجير السيارة وسياسة استخدام البيانات.",privacyPolicy:"يتم استخدام المستندات المقدمة فقط لأغراض التحقق وإتمام عملية التأجير."};
+const DEMO=[
+{id:"demo1",name:"Toyota Corolla",image:"https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=900&q=80",videoUrl:"",description:"سيارة عملية ومريحة.",pricePerDay:1500,deposit:1000,transmission:"أوتوماتيك",availability:"Available",seats:5,fuelType:"بنزين",luggage:2,driverAvailable:true,features:["تكييف","شاشة","كاميرا"],demo:true},
+{id:"demo2",name:"Hyundai Elantra",image:"https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80",videoUrl:"",description:"راحة وأناقة للعائلة.",pricePerDay:1700,deposit:1000,transmission:"أوتوماتيك",availability:"Available",seats:5,fuelType:"بنزين",luggage:2,driverAvailable:true,features:["تكييف","شاشة"],demo:true},
+{id:"demo3",name:"Kia Cerato",image:"https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80",videoUrl:"",description:"أداء متوازن وتصميم عصري.",pricePerDay:1600,deposit:1000,transmission:"أوتوماتيك",availability:"Available",seats:5,fuelType:"بنزين",luggage:2,driverAvailable:false,features:["تكييف","بلوتوث"],demo:true},
+{id:"demo4",name:"Nissan Sunny",image:"https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80",videoUrl:"",description:"اقتصادية وموثوقة.",pricePerDay:1300,deposit:800,transmission:"أوتوماتيك",availability:"Available",seats:5,fuelType:"بنزين",luggage:2,driverAvailable:true,features:["تكييف","بلوتوث"],demo:true}];
+let S={cars:[],bookings:[],customers:[],settings:{...DEF},pending:[],car:null,tab:"dashboard",cal:new Date(new Date().getFullYear(),new Date().getMonth(),1),last:null,busy:[]};
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)], esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const uid=p=>p+"_"+Date.now().toString(36)+"_"+Math.random().toString(36).slice(2,9);
+const configured=()=>GOOGLE_APPS_SCRIPT_URL&&!GOOGLE_APPS_SCRIPT_URL.includes("PASTE_YOUR_URL");
+const money=n=>new Intl.NumberFormat("ar-EG").format(Number(n)||0)+" "+(S.settings.currency||CURRENCY);
+const norm=v=>{let s=String(v||"").replace(/[^\d+]/g,"");if(s.startsWith("00"))s="+"+s.slice(2);if(/^01\d{9}$/.test(s))s="+20"+s.slice(1);if(/^20\d{10}$/.test(s))s="+"+s;return s};
+const phoneOK=v=>{
+  let raw=String(v||"").replace(/[\s()-]/g,"");
+  let n=norm(raw);
+  return /^(?:\+20)?1[0125]\d{8}$/.test(n.replace(/^\+20/,"")) ||
+         /^\+?[1-9]\d{7,14}$/.test(n);
+};
+const iso=(d,t)=>d+"T"+t+":00", today=()=>{let d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)};
+const days=(a,b)=>Math.max(1,Math.ceil((b-a)/86400000));
+const fmt=d=>{let x=new Date(d);return isNaN(x)?"—":new Intl.DateTimeFormat("ar-EG",{year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"}).format(x)};
+const overlap=(a,b,c,d)=>a<d&&c<b;
+function totals(car,a,b,driver,disc=0,fees=0){let n=days(a,b),ct=+car.pricePerDay*n,dt=driver?+S.settings.driverDailyRate*n:0,dep=+car.deposit||+S.settings.defaultDeposit||0;if(driver&&S.settings.driverChangesDeposit)dep+=+S.settings.driverDepositAdjustment||0;return{days:n,carTotal:ct,driverTotal:dt,deposit:dep,grand:Math.max(0,ct+dt+fees-disc)}}
+function conflict(carId,a,b,ignore){const A=new Date(a),B=new Date(b);return S.bookings.some(x=>x.carId===carId&&["Pending Deposit","Confirmed"].includes(x.status)&&x.bookingId!==ignore&&overlap(A,B,new Date(x.pickupDateTime),new Date(x.returnDateTime)))||S.busy.some(x=>x.carId===carId&&overlap(A,B,new Date(x.pickupDateTime),new Date(x.returnDateTime)))}
+function load(){const cloud=configured();try{S.cars=cloud?[]:(JSON.parse(localStorage.getItem(K.cars)||"null")||structuredClone(DEMO))}catch{S.cars=cloud?[]:structuredClone(DEMO)}try{S.bookings=cloud?[]:JSON.parse(localStorage.getItem(K.bookings)||"[]")}catch{S.bookings=[]}try{S.settings={...DEF,...(cloud?{}:JSON.parse(localStorage.getItem(K.settings)||"{}"))}}catch{}try{S.customers=cloud?[]:JSON.parse(localStorage.getItem(K.customers)||"[]")}catch{}try{S.pending=JSON.parse(localStorage.getItem(K.pending)||"[]")}catch{}}
+function save(){try{const srv=configured();localStorage.setItem(K.cars,JSON.stringify(S.cars));localStorage.setItem(K.bookings,JSON.stringify(srv?[]:S.bookings));localStorage.setItem(K.settings,JSON.stringify(S.settings));localStorage.setItem(K.customers,JSON.stringify(srv?[]:S.customers));localStorage.setItem(K.pending,JSON.stringify(S.pending));return true}catch(e){console.warn("save failed",e);return false}}
+function toast(m,t="i"){let x=document.createElement("div");x.className="bg-[#0b1b2b] text-white p-3 rounded-xl shadow-lg text-sm font-bold";if(t==="s")x.className="bg-green-600 text-white p-3 rounded-xl shadow-lg text-sm font-bold";if(t==="e")x.className="bg-red-600 text-white p-3 rounded-xl shadow-lg text-sm font-bold";if(t==="w")x.className="bg-amber-500 text-white p-3 rounded-xl shadow-lg text-sm font-bold";x.textContent=m;$("#toasts").append(x);setTimeout(()=>x.remove(),4000)}
+function openM(t,b){$("#mt").textContent=t;$("#mb").innerHTML=b;$("#modal").classList.remove("hidden")}
+function closeM(){$("#modal").classList.add("hidden")}
+function apply(){document.documentElement.style.setProperty("--a",S.settings.accentColor||DEF.accentColor);$("#office").textContent=S.settings.officeName;$("#foot").textContent=S.settings.officeName;const logo=$("#logo");logo.alt=(S.settings.officeName||"Helawey Car Rental")+" logo";logo.src=/^https?:\/\//i.test(String(S.settings.logo||""))?S.settings.logo:"assets/hellawy-car-logo.png";$("#phoneTop").textContent=S.settings.phone;$("#phone").textContent=S.settings.phone;$("#address").textContent=S.settings.address;$("#year").textContent=new Date().getFullYear();$("#privacyPublic").textContent=S.settings.privacyPolicy;let w=p=>`https://wa.me/${norm(p).replace("+","")}?text=${encodeURIComponent("مرحباً، أريد الاستفسار عن تأجير سيارة.")}`;["waTop","waMobile","heroWa","wa"].forEach(id=>$("#"+id).href=w(S.settings.whatsapp));$("#maps").href=S.settings.mapsUrl||"#";$("#fb").href=S.settings.facebookUrl||"#";$("#ig").href=S.settings.instagramUrl||"#"}
+function renderCars(){let cs=S.cars.filter(c=>c.availability==="Available");$("#carCount").textContent=cs.length+" سيارة متاحة";$("#emptyCars").classList.toggle("hidden",!!cs.length);$("#emptyCars").textContent=configured()&&S.apiUnavailable?"تعذر تحميل السيارات الآن. أعد المحاولة لاحقًا.":"لا توجد سيارات متاحة حاليًا.";$("#carsGrid").innerHTML=cs.map(c=>`<article class="card overflow-hidden flex flex-col"><img class="w-full h-48 object-cover" src="${esc(c.image)}" alt="${esc(c.name)}" loading="lazy"><div class="p-5 flex-1 flex flex-col"><div class="flex justify-between gap-2"><h3 class="font-black text-lg">${esc(c.name)}</h3><span class="text-xs bg-green-50 text-green-700 rounded-full px-2 py-1">متاحة</span></div><p class="text-sm text-slate-500">${esc(c.transmission)} • ${c.seats} مقاعد</p><p class="text-sm text-slate-500 mt-3">${esc(c.description)}</p><div class="grid grid-cols-2 gap-2 mt-4"><div class="bg-slate-50 rounded-xl p-3 text-sm">السعر<br><b>${money(c.pricePerDay)}/يوم</b></div><div class="bg-slate-50 rounded-xl p-3 text-sm">العربون<br><b>${money(c.deposit)}</b></div></div><div class="mt-3 flex flex-wrap gap-1">${(c.features||[]).slice(0,3).map(f=>`<span class="text-xs bg-slate-100 px-2 py-1 rounded-full">${esc(f)}</span>`).join("")}</div><div class="mt-auto pt-5 flex gap-2">${c.videoUrl?`<a class="btn l flex-1" target="_blank" rel="noopener" href="${esc(c.videoUrl)}">▶ فيديو</a>`:""}<button class="btn p flex-1" data-book="${esc(c.id)}">احجز الآن</button></div></div></article>`).join("")}
+function bookingNo(){let n=S.bookings.map(b=>+(String(b.bookingId||"").split("-").pop())).filter(Number.isFinite);return`CR-${new Date().getFullYear()}-${String(Math.max(0,...n)+1).padStart(5,"0")}`}
+function setStep(n){$$("[data-s]").forEach(x=>x.classList.toggle("hidden",+x.dataset.s!==n));$$(".step").forEach((x,i)=>x.className="step p-2 rounded text-center "+(i+1===n?"on":i+1<n?"done":"bg-slate-100"));if(n===4&&typeof renderPay==="function")renderPay()}
+function openBook(c){S.car=c;$("#booking").classList.remove("hidden");$("#chosen").innerHTML=`<img src="${esc(c.image)}" class="w-28 h-20 object-cover rounded-xl"><div><b>${esc(c.name)}</b><p class="text-sm text-slate-500">${esc(c.transmission)} • ${money(c.pricePerDay)}/يوم</p></div>`;$("#pd").min=today();$("#rd").min=today();{let da=c.driverAvailable!==false;$('input[name=driver][value=true]').closest("label").style.display=da?"":"none";if(!da)$('input[name=driver][value=false]').checked=true}setStep(1)}
+function valid2(q){let a=new Date(iso($("#pd").value,$("#pt").value)),b=new Date(iso($("#rd").value,$("#rt").value));if(q&&(!$("#pd").value||!$("#rd").value))return false;if(!$("#pd").value||!$("#rd").value||isNaN(a)||isNaN(b)||b<=a||a<new Date()){toast("يرجى اختيار تاريخ ووقت صحيحين.","e");return false}if(conflict(S.car.id,a,b)){toast("السيارة غير متاحة في الفترة المحددة، يرجى اختيار فترة أخرى.","e");return false}let d=$('input[name=driver]:checked').value==="true",t=totals(S.car,a,b,d);$("#sum2").innerHTML=`مدة الإيجار: <b>${t.days} أيام</b> — السيارة: <b>${money(t.carTotal)}</b> — السائق: <b>${money(t.driverTotal)}</b> — الإجمالي: <b class="text-[var(--a)]">${money(t.grand)}</b>`;return true}
+function valid3(){if($("#name").value.trim().length<3||!phoneOK($("#custPhone").value)||!/^\d{14}$/.test($("#nid").value)||$("#addr").value.trim().length<5){toast("يرجى مراجعة الاسم والهاتف والرقم القومي والعنوان.","e");return false}let d=$('input[name=driver]:checked').value==="true";if(!$("#idf").files[0]||!$("#idb").files[0]||(!d&&!$("#lic").files[0])){toast(d?"يرجى رفع صور الرقم القومي.":"يرجى رفع الرقم القومي ورخصة القيادة.","e");return false}for(let id of ["idf","idb","lic"]){let f=$("#"+id).files[0];if(f&&(f.size>(f.type==="application/pdf"?4:25)*1024*1024||!["image/jpeg","image/png","image/webp","application/pdf"].includes(f.type))){toast("الملف يجب أن يكون صورة JPG/PNG/WEBP (حتى 25MB) أو PDF (حتى 4MB).","e");return false}}return true}
+async function b64(f){if(!f)return null;if(f.type.startsWith("image/")){try{const bm=await createImageBitmap(f),k=Math.min(1,1600/Math.max(bm.width,bm.height)),c=document.createElement("canvas");c.width=Math.round(bm.width*k);c.height=Math.round(bm.height*k);c.getContext("2d").drawImage(bm,0,0,c.width,c.height);return{name:f.name.replace(/\.\w+$/,"")+".jpg",type:"image/jpeg",data:c.toDataURL("image/jpeg",0.72).split(",")[1]}}catch(e){console.warn("compress failed",e)}}return new Promise((res,rej)=>{let r=new FileReader();r.onload=()=>res({name:f.name,type:f.type,data:r.result.split(",")[1]});r.onerror=rej;r.readAsDataURL(f)})}
+function renderPay(){
+  const methods=[
+    ["vodafone","Vodafone Cash",S.settings.vodafoneCash||VODAFONE_CASH_NUMBER,"رقم فودافون كاش الخاص بالشركة"],
+    ["instapay","InstaPay",S.settings.instapay||"CHANGE_ME","حساب إنستا باي الخاص بالشركة"]
+  ];
+
+  const card=(x)=>`<label class="payment-card cursor-pointer block">
+    <input class="sr-only payment-radio" type="radio" name="pm" value="${x[0]}">
+    <span class="block border-2 border-slate-200 rounded-2xl p-5 transition hover:border-[var(--a)]">
+      <div class="flex items-center justify-between gap-4">
+        <div><b class="text-xl">${x[1]}</b><small class="block text-slate-500 mt-1">اضغط لاختيار طريقة الدفع</small></div>
+        <span class="text-2xl">◉</span>
+      </div>
+      <div class="payment-details mt-5 pt-5 border-t border-amber-200" style="display:none">
+        <div class="text-sm text-slate-600 mb-2">${x[3]}</div>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <div class="flex-1 rounded-xl bg-white border border-slate-200 px-5 py-4">
+            <div class="text-xs text-slate-500 mb-1">حوّل إلى هذا الرقم/الحساب</div>
+            <div class="text-3xl font-black tracking-wide select-all">${esc(x[2])}</div>
+          </div>
+          <button type="button" class="copy-pay-number px-5 py-4 rounded-xl border-2 border-[var(--a)] font-bold" data-copy="${esc(x[2])}">نسخ</button>
+        </div>
+        <div class="mt-4 text-sm font-bold">أتمم التحويل ثم ارفع صورة إيصال التحويل بالأسفل.</div>
+      </div>
+    </span>
+  </label>`;
+
+  $("#payMethods").innerHTML=methods.map(card).join("");
+
+  const choose=(method)=>{
+    document.querySelectorAll('.payment-radio').forEach(r=>{
+      const on=r.value===method;
+      r.checked=on;
+      const box=r.closest('.payment-card');
+      if(box){
+        const span=box.querySelector(':scope > span');
+        const details=box.querySelector('.payment-details');
+        if(span){span.classList.toggle('border-[var(--a)]',on);span.classList.toggle('bg-amber-50',on);}
+        if(details) details.style.display=on?'block':'none';
+      }
+    });
+    renderPayFields();
+  };
+
+  document.querySelectorAll('.payment-card').forEach(cardEl=>{
+    cardEl.addEventListener('click',e=>{
+      if(e.target.closest('.copy-pay-number')) return;
+      const radio=cardEl.querySelector('.payment-radio');
+      choose(radio.value);
+    });
+  });
+
+  document.querySelectorAll('.payment-radio').forEach(r=>r.addEventListener('change',()=>choose(r.value)));
+
+  document.querySelectorAll('.copy-pay-number').forEach(btn=>{
+    btn.addEventListener('click',async e=>{
+      e.preventDefault(); e.stopPropagation();
+      try{await navigator.clipboard.writeText(btn.dataset.copy);toast('تم نسخ الرقم.','s')}
+      catch{toast('انسخ هذا: '+btn.dataset.copy,'s')}
+    });
+  });
+
+  $("#payFields").innerHTML='<div class="bg-slate-50 p-4 rounded-xl text-slate-600">اختر فودافون كاش أو إنستا باي للمتابعة.</div>';
+}
+
+function renderPayFields(){
+  const m=document.querySelector('input[name="pm"]:checked')?.value||"";
+  const labels={vodafone:"Vodafone Cash",instapay:"InstaPay"};
+  if(!m){
+    $("#payFields").innerHTML='<div class="bg-slate-50 p-4 rounded-xl text-slate-600">اختر فودافون كاش أو إنستا باي للمتابعة.</div>';
+    return;
+  }
+  const account=m==="vodafone"?(S.settings.vodafoneCash||VODAFONE_CASH_NUMBER):(S.settings.instapay||"CHANGE_ME");
+  $("#payFields").innerHTML=`<div class="rounded-2xl border-2 ${m==="vodafone"?'border-amber-300 bg-amber-50':'border-slate-200 bg-white'} p-5 mt-4">
+    <div class="text-xl font-black">${labels[m]}</div>
+    <div class="text-sm text-slate-600 mt-1">حوّل العربون إلى شركة التأجير.</div>
+    <div class="mt-4 rounded-xl bg-white border border-slate-200 p-4">
+      <div class="text-sm text-slate-500">${m==="vodafone"?'رقم فودافون كاش الخاص بالشركة':'حساب إنستا باي الخاص بالشركة'}</div>
+      <div class="text-3xl font-black tracking-wide select-all">${esc(account)}</div>
+    </div>
+    <label class="block mt-5"><span class="font-bold">رقم الهاتف المرسل منه التحويل</span>
+      <input id="senderPhone" type="tel" inputmode="tel" autocomplete="tel" required class="mt-2 w-full border rounded-xl p-3 bg-white" placeholder="01xxxxxxxxx">
+    </label>
+    <label class="block mt-5"><span class="font-bold">صورة إيصال التحويل</span>
+      <input id="receipt" type="file" accept="image/*,.pdf" required class="mt-2 w-full border-2 border-dashed rounded-2xl p-4 bg-white">
+      <small class="block mt-2 text-slate-500">ارفع الصورة بعد إتمام التحويل.</small>
+    </label>
+  </div>`;
+
+  try{
+    let a=new Date(iso($("#pd").value,$("#pt").value)),b=new Date(iso($("#rd").value,$("#rt").value)),d=$("input[name=driver]:checked").value==="true",t=totals(S.car,a,b,d);
+    $("#final").innerHTML=`<div class="card p-4"><b>ملخص الحجز</b><div class="grid sm:grid-cols-2 gap-2 mt-3 text-sm"><span>السيارة: ${money(t.carTotal)}</span><span>السائق: ${money(t.driverTotal)}</span><span>العربون المطلوب: <b>${money(t.deposit)}</b></span><span>الدفع: <b>${labels[m]}</b></span><b>الإجمالي: ${money(t.grand)}</b></div></div>`;
+  }catch(e){ console.warn('Payment summary unavailable',e); }
+}
+
+async function submitBook(e){e?.preventDefault?.();let btn=$("#submit");try{if(!S.car){toast("يرجى اختيار سيارة أولاً.","e");return}if(!valid2()){setStep(2);return}if(!valid3()){setStep(3);return}if(!$("#terms").checked){toast("يرجى الموافقة على الشروط وسياسة الخصوصية.","e");return}let pm=$('input[name=pm]:checked')?.value||"";
+if(!["vodafone","instapay"].includes(pm)){toast("يرجى اختيار فودافون كاش أو إنستا باي.","e");return}
+let senderPhone=norm($("#senderPhone")?.value||"");if(!phoneOK(senderPhone)){toast("يرجى إدخال رقم الهاتف الذي أُرسل منه التحويل.","e");return}if(!$("#receipt")?.files[0]){toast("يرجى رفع صورة إيصال التحويل.","e");return}btn.disabled=true;btn.textContent="جارٍ إرسال الحجز...";let a=new Date(iso($("#pd").value,$("#pt").value)),z=new Date(iso($("#rd").value,$("#rt").value)),driver=$('input[name=driver]:checked').value==="true",t=totals(S.car,a,z,driver);let b={id:uid("book"),requestId:uid("req"),bookingId:bookingNo(),createdAt:new Date().toISOString(),status:"Pending Deposit",customer:{name:$("#name").value.trim(),phone:norm($("#custPhone").value),whatsapp:norm($("#custWa").value)||norm($("#custPhone").value),nationalId:$("#nid").value,address:$("#addr").value,email:$("#email").value},carId:S.car.id,carName:S.car.name,pickupDate:$("#pd").value,pickupTime:$("#pt").value,returnDate:$("#rd").value,returnTime:$("#rt").value,pickupDateTime:a.toISOString(),returnDateTime:z.toISOString(),rentalDays:t.days,driver,carDailyRate:S.car.pricePerDay,driverDailyRate:driver?S.settings.driverDailyRate:0,carTotal:t.carTotal,driverTotal:t.driverTotal,additionalFees:0,discount:0,grandTotal:t.grand,requiredDeposit:t.deposit,amountPaid:0,remaining:t.grand,paymentMethod:pm,senderPhone,documents:{idFront:await b64($("#idf").files[0]),idBack:await b64($("#idb").files[0]),drivingLicense:await b64($("#lic").files[0]),paymentReceipt:await b64($("#receipt")?.files[0])},adminNotes:""};if(conflict(b.carId,a,z))throw Error("CONFLICT");if(configured()){let r=await api("createBooking",{booking:b});if(!r.success)throw Error(r.error||"SERVER");b.bookingId=r.bookingId;b.documents={}}else{S.bookings.push(b);if(save())toast("تم حفظ الحجز محليًا.","s");else{for(const k in b.documents)if(b.documents[k])b.documents[k]={name:b.documents[k].name,omitted:true};save();toast("تم حفظ الحجز بدون صور المستندات (مساحة المتصفح ممتلئة).","w")}}S.last=b;$("#booking").classList.add("hidden");$("#successId").textContent=b.bookingId;$("#successWa").href=waLink(b.customer.whatsapp,waMsg(b));$("#success").classList.remove("hidden")}catch(x){console.error(x);if(x.message==="CONFLICT"||x.message==="CAR")toast("السيارة لم تعد متاحة في هذه الفترة.","e");else toast("تعذر إرسال الحجز: "+({RATE:"طلبات كثيرة، حاول لاحقًا.",INVALID:"بيانات غير صحيحة.",CAR:"السيارة غير متاحة.",SERVER:"خطأ في الخادم."}[x.message]||"تحقق من الاتصال وحاول مرة أخرى."),"e")}finally{btn.disabled=false;btn.textContent="إرسال طلب الحجز"}}
+function waLink(p,t){return`https://wa.me/${norm(p).replace("+","")}?text=${encodeURIComponent(t)}`}
+function waMsg(b){return`مرحباً ${b.customer.name}،\nتم استلام طلب حجزك.\n\nرقم الحجز: ${b.bookingId}\nالسيارة: ${b.carName}\nمن: ${b.pickupDate} ${b.pickupTime}\nإلى: ${b.returnDate} ${b.returnTime}\nالمدة: ${b.rentalDays} أيام\nالسائق: ${b.driver?"بسائق":"بدون سائق"}\nالإجمالي: ${money(b.grandTotal)}\nالعربون: ${money(b.requiredDeposit)}\nالمتبقي: ${money(b.remaining)}`}
+async function api(action,data={}){let r=await fetch(GOOGLE_APPS_SCRIPT_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action,token:sessionStorage.getItem("carRental_token")||"",...data})});return await r.json()}
+async function sync(){if(!configured())return;const adm=sessionStorage.getItem("carRental_token");let r=await api(adm?"getData":"getPublicData");if(r.error==="UNAUTHORIZED"){sessionStorage.removeItem("carRental_token");sessionStorage.removeItem(K.session);r=await api("getPublicData")}if(!r.success)throw Error("LOAD");if(Array.isArray(r.cars))S.cars=r.cars;S.settings={...DEF,...(r.settings||{})};S.busy=r.busy||[];S.bookings=r.bookings||[];S.customers=[];S.apiUnavailable=false;save();apply();renderCars()}
+window.adminOpen = function adminOpen(){
+  const modal=$("#admin"), login=$("#login"), panel=$("#panel");
+  if(!modal||!login||!panel)return;
+  modal.classList.remove("hidden");
+  if(sessionStorage.getItem(K.session)==="1"){
+    login.classList.add("hidden");
+    panel.classList.remove("hidden");
+    try{renderAdmin()}catch(e){console.error(e);panel.classList.add("hidden");login.classList.remove("hidden");toast("تعذر فتح لوحة الإدارة: "+(e.message||e),"e")}
+  }else{
+    panel.classList.add("hidden");
+    login.classList.remove("hidden");
+    $("#pin").value="";
+    $("#pin").focus();
+  }
+  $("#localWarn").textContent=configured()?"تسجيل الدخول والتحقق يتمان على الخادم. لا تشارك رمز PIN.":"وضع التشغيل المحلي فعال — البيانات محفوظة على هذا الجهاز فقط.";
+}
+function stats(){return{cars:S.cars.length,av:S.cars.filter(c=>c.availability==="Available").length,rent:S.cars.filter(c=>c.availability==="Rented").length,pen:S.bookings.filter(b=>b.status==="Pending Deposit").length,con:S.bookings.filter(b=>b.status==="Confirmed").length,today:S.bookings.filter(b=>b.pickupDate===today()).length,revenue:S.bookings.filter(b=>b.status!=="Rejected").reduce((a,b)=>a+ +b.grandTotal,0),paid:S.bookings.filter(b=>b.status!=="Rejected").reduce((a,b)=>a+ +b.amountPaid,0),out:S.bookings.filter(b=>b.status!=="Rejected").reduce((a,b)=>a+ +b.remaining,0)}}
+const stAr=s=>({ "Pending Deposit":"في انتظار العربون",Confirmed:"مؤكد",Completed:"مكتمل",Rejected:"مرفوض"})[s]||s;
+function renderAdmin(){let tabs=["dashboard","cars","bookings","calendar","customers","payments","settings","backup"];$("#tabs").innerHTML=tabs.map(t=>`<button class="btn ${S.tab===t?"d":"l"} whitespace-nowrap" data-tab="${t}">${{dashboard:"الرئيسية",cars:"السيارات",bookings:"الحجوزات",calendar:"التقويم",customers:"العملاء",payments:"المدفوعات",settings:"الإعدادات",backup:"النسخ الاحتياطي"}[t]}</button>`).join("");let fn={dashboard:dash,cars:adminCars,bookings:adminBookings,calendar:calendar,customers:customers,payments:payments,settings:settings,backup:backup};fn[S.tab]();$("#conn").textContent=configured()?"الاتصال بالنظام السحابي فعال":"وضع التشغيل المحلي فعال"} 
+function dash(){let x=stats();$("#adminContent").innerHTML=`<div class="grid grid-cols-2 lg:grid-cols-4 gap-3">${[["إجمالي السيارات",x.cars],["المتاحة",x.av],["المؤجرة",x.rent],["في انتظار العربون",x.pen],["المؤكدة",x.con],["حجوزات اليوم",x.today],["إجمالي قيمة الحجوزات",money(x.revenue)],["المتبقي",money(x.out)]].map(a=>`<div class="card p-4"><small class="text-slate-500">${a[0]}</small><b class="block text-xl mt-1">${a[1]}</b></div>`).join("")}</div><div class="card p-5 mt-4"><div class="flex flex-wrap items-center justify-between gap-3"><b>آخر الحجوزات</b><button class="btn l" id="dashCsv">تصدير كل طلبات الحجز CSV</button></div><div class="mt-3 grid gap-2">${S.bookings.slice().reverse().slice(0,8).map(b=>`<button class="text-right border rounded-xl p-3" data-detail="${b.bookingId}"><b>${esc(b.bookingId)}</b> — ${esc(b.customer?.name||"")} — ${esc(b.carName||"")} — ${stAr(b.status)}</button>`).join("")||"<p class=text-slate-500>لا توجد حجوزات حتى الآن.</p>"}</div></div>`;$("#dashCsv").onclick=csv}
+function carEditor(c={}){openM(c.id?"تعديل السيارة":"إضافة سيارة",`<form id=carForm class="grid md:grid-cols-2 gap-3"><input id=cid type=hidden value="${esc(c.id||"")}"><label>اسم السيارة<input id=cn required value="${esc(c.name||"")}" class="w-full border rounded-xl p-3 mt-1"></label><label>رابط الصورة<input id=ci required value="${esc(c.image||"")}" class="w-full border rounded-xl p-3 mt-1"></label><label>رابط الفيديو<input id=cv value="${esc(c.videoUrl||"")}" class="w-full border rounded-xl p-3 mt-1"></label><label>السعر اليومي<input id=cp type=number min=0 required value="${c.pricePerDay||0}" class="w-full border rounded-xl p-3 mt-1"></label><label>العربون<input id=cd type=number min=0 value="${c.deposit||0}" class="w-full border rounded-xl p-3 mt-1"></label><label>ناقل الحركة<input id=ct value="${esc(c.transmission||"أوتوماتيك")}" class="w-full border rounded-xl p-3 mt-1"></label><label>الحالة<select id=ca class="w-full border rounded-xl p-3 mt-1"><option value=Available>متاحة</option><option value=Rented>مؤجرة</option><option value=Maintenance>صيانة</option><option value=Hidden>مخفية</option></select></label><label>المقاعد<input id=cs type=number min=1 value="${c.seats||5}" class="w-full border rounded-xl p-3 mt-1"></label><label>الوقود<input id=cf value="${esc(c.fuelType||"بنزين")}" class="w-full border rounded-xl p-3 mt-1"></label><label>الشنط<input id=cl type=number min=0 value="${c.luggage||2}" class="w-full border rounded-xl p-3 mt-1"></label><label class="flex gap-2 items-center mt-7"><input id=cdv type=checkbox ${c.driverAvailable!==false?"checked":""}> السائق متاح</label><label class="md:col-span-2">الوصف<textarea id=cdesc class="w-full border rounded-xl p-3 mt-1">${esc(c.description||"")}</textarea></label><label class="md:col-span-2">المميزات مفصولة بفاصلة<input id=cfet value="${esc((c.features||[]).join(", "))}" class="w-full border rounded-xl p-3 mt-1"></label><button class="btn p md:col-span-2">حفظ</button></form>`);if(c.id)$("#ca").value=c.availability;$("#carForm").onsubmit=async e=>{e.preventDefault();let id=$("#cid").value||uid("car"),old=S.cars.find(x=>x.id===id),n={id,name:$("#cn").value.trim(),image:$("#ci").value.trim(),videoUrl:$("#cv").value.trim(),pricePerDay:+$("#cp").value,deposit:+$("#cd").value,transmission:$("#ct").value.trim(),availability:$("#ca").value,seats:+$("#cs").value,fuelType:$("#cf").value.trim(),luggage:+$("#cl").value,driverAvailable:$("#cdv").checked,description:$("#cdesc").value.trim(),features:$("#cfet").value.split(",").map(x=>x.trim()).filter(Boolean),createdAt:old?.createdAt||new Date().toISOString(),updatedAt:new Date().toISOString()};try{if(configured()){let r=await api("saveCar",{car:n});if(!r.success)throw Error()}S.cars=old?S.cars.map(x=>x.id===id?n:x):[...S.cars,n];save();closeM();renderAdmin();renderCars();toast("تم حفظ السيارة.","s")}catch{toast("تعذر حفظ السيارة.","e")}}}
+function adminCars(){$("#adminContent").innerHTML=`<div class="flex justify-between mb-4"><h2 class="text-2xl font-black">السيارات</h2><button class="btn p" id=addCar>+ إضافة سيارة</button></div><div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">${S.cars.map(c=>`<div class=card><img src="${esc(c.image)}" class="w-full h-40 object-cover rounded-t-[1.15rem]"><div class=p-4><div class="flex justify-between"><b>${esc(c.name)}</b><span class=text-xs>${esc(c.availability)}</span></div><p class="text-sm text-slate-500">${money(c.pricePerDay)} / يوم</p><div class="flex gap-2 mt-3"><button class="btn l" data-edit="${c.id}">تعديل</button><button class="btn l" data-dup="${c.id}">نسخ</button><button class="btn r" data-del="${c.id}">حذف</button></div></div></div>`).join("")}</div>`;$("#addCar").onclick=()=>carEditor();$$("[data-edit]").forEach(b=>b.onclick=()=>carEditor(S.cars.find(c=>c.id===b.dataset.edit)));$$("[data-dup]").forEach(b=>b.onclick=async()=>{let c=structuredClone(S.cars.find(c=>c.id===b.dataset.dup));c.id=uid("car");c.name+=" (نسخة)";try{if(configured()){let r=await api("saveCar",{car:c});if(!r.success)throw Error()}S.cars.push(c);save();renderAdmin();renderCars();toast("تم نسخ السيارة.","s")}catch{toast("تعذر حفظ نسخة السيارة على الخادم.","e")}});$$("[data-del]").forEach(b=>b.onclick=async()=>{if(!confirm("تأكيد حذف السيارة؟"))return;try{if(configured()){let r=await api("deleteCar",{id:b.dataset.del});if(!r.success)throw Error()}S.cars=S.cars.filter(c=>c.id!==b.dataset.del);save();renderAdmin();renderCars()}catch{toast("تعذر الحذف.","e")}})}
+function adminBookings(){let list=S.bookings.slice().reverse();$("#adminContent").innerHTML=`<div class="flex flex-col lg:flex-row gap-3 mb-4"><input id=bq placeholder="بحث بالاسم أو الهاتف أو رقم الحجز أو السيارة" class="flex-1 border rounded-xl p-3"><select id=bs class="border rounded-xl p-3"><option value="">كل الحالات</option><option>Pending Deposit</option><option>Confirmed</option><option>Completed</option><option>Rejected</option></select><select id=bc class="border rounded-xl p-3"><option value="">كل السيارات</option>${S.cars.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join("")}</select><button id=manual class="btn d">+ حجز يدوي</button><button id=csv class="btn l">تصدير CSV</button></div><div id=bl class=grid></div>`;let draw=()=>{$("#bl").innerHTML=list.filter(b=>{let q=($("#bq").value||"").toLowerCase(),hay=`${b.bookingId} ${b.customer?.name||""} ${b.customer?.phone||""} ${b.carName||""}`.toLowerCase();return(!q||hay.includes(q))&&(!$("#bs").value||b.status===$("#bs").value)&&(!$("#bc").value||b.carId===$("#bc").value)}).map(b=>`<button data-detail="${b.bookingId}" class="card p-4 text-right"><b>${esc(b.bookingId)}</b> — ${esc(b.customer?.name||"")} — ${esc(b.carName||"")}<span class="block text-sm text-slate-500">${fmt(b.pickupDateTime)} → ${fmt(b.returnDateTime)} • ${stAr(b.status)} • ${money(b.grandTotal)}</span></button>`).join("")||`<div class="card p-10 text-center text-slate-500">لم يتم العثور على نتائج.</div>`;$$("[data-detail]").forEach(x=>x.onclick=()=>detail(x.dataset.detail))};["bq","bs","bc"].forEach(id=>$("#"+id).oninput=draw);$("#csv").onclick=csv;$("#manual").onclick=manual;draw()}
+function docsCard(b){const L={idFront:"الرقم القومي (أمام)",idBack:"الرقم القومي (خلف)",drivingLicense:"رخصة القيادة",paymentReceipt:"إيصال التحويل"},d=b.documents||{};const h=Object.keys(L).filter(k=>d[k]&&!d[k].omitted).map(k=>{const v=d[k],a=typeof v==="string"?`href="${esc(v)}" target="_blank" rel="noopener"`:`href="data:${esc(v.type)};base64,${v.data}" download="${esc(v.name)}"`;return`<a class="btn l mt-2 w-full" ${a}>${L[k]}</a>`}).join("");return`<div class="card"><div class="p-4"><b>المستندات</b>${h||'<p class="text-slate-500 mt-2">لا توجد مستندات.</p>'}</div></div>`}
+function detail(id){let b=S.bookings.find(x=>x.bookingId===id);if(!b)return;openM("تفاصيل الحجز "+b.bookingId,`<div class="grid md:grid-cols-2 gap-4 text-sm"><div class=card><div class=p-4><b>العميل</b><p>${esc(b.customer?.name)}<br>${esc(b.customer?.phone)}<br>${esc(b.customer?.whatsapp)}<br>الرقم القومي: ${esc(b.customer?.nationalId)}<br>${esc(b.customer?.address)}</p></div></div><div class=card><div class=p-4><b>السيارة والمدة</b><p>${esc(b.carName)}<br>${fmt(b.pickupDateTime)} → ${fmt(b.returnDateTime)}<br>${b.rentalDays} أيام<br>${b.driver?"بسائق":"بدون سائق"}</p></div></div><div class=card><div class=p-4><b>الماليات</b><p>السيارة: ${money(b.carTotal)}<br>السائق: ${money(b.driverTotal)}<br>رسوم: ${money(b.additionalFees)}<br>خصم: -${money(b.discount)}<br>الإجمالي: ${money(b.grandTotal)}<br>العربون: ${money(b.requiredDeposit)}<br>المدفوع: ${money(b.amountPaid)}<br>المتبقي: ${money(b.remaining)}</p></div></div><div class=card><div class=p-4><b>الدفع</b><p>${b.paymentMethod}<br>${esc(b.senderPhone||"")}</p></div></div>${docsCard(b)}</div><label class="block mt-4">ملاحظات الإدارة<textarea id=notes class="w-full border rounded-xl p-3 mt-2">${esc(b.adminNotes||"")}</textarea></label><div class="flex flex-wrap gap-2 mt-4"><button class="btn g" data-status=Confirmed>تأكيد</button><button class="btn l" data-status=Completed>مكتمل</button><button class="btn r" data-status=Rejected>رفض</button><button class="btn l" id=printB>طباعة</button><a class="btn g" target="_blank" href="${waLink(b.customer?.whatsapp||b.customer?.phone,waMsg(b))}">تواصل</a></div>`);$$("[data-status]").forEach(x=>x.onclick=()=>status(b,x.dataset.status));$("#printB").onclick=()=>printB(b)}
+async function status(b,s){if(["Rejected","Completed"].includes(s)&&!confirm("تأكيد تغيير الحالة؟"))return;const updated={...b,status:s,adminNotes:$("#notes").value};try{if(configured()){let r=await api("updateBooking",{booking:updated});if(!r.success)throw Error()}let i=S.bookings.findIndex(x=>x.bookingId===b.bookingId);if(i<0)throw Error("BOOKING");S.bookings[i]=updated;save();closeM();renderAdmin();toast("تم تحديث الحالة.","s")}catch{toast("تعذر تحديث الحجز.","e")}}
+function calendar(){$("#adminContent").innerHTML=`<div class="flex justify-between items-center mb-4"><h2 class="text-2xl font-black">التقويم</h2><div class="flex gap-2"><button class="btn l" id=cpv>السابق</button><b>${S.cal.toLocaleDateString("ar-EG",{month:"long",year:"numeric"})}</b><button class="btn l" id=cnx>التالي</button></div></div><div class="card overflow-hidden"><div class="grid grid-cols-7 bg-slate-100 text-xs font-bold">${["الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت","الأحد"].map(x=>`<div class=p-2>${x}</div>`).join("")}</div><div id=calgrid class="grid grid-cols-7"></div></div>`;let y=S.cal.getFullYear(),m=S.cal.getMonth(),first=new Date(y,m,1),off=(first.getDay()+6)%7,n=new Date(y,m+1,0).getDate(),h="";for(let i=0;i<off;i++)h+="<div class='min-h-24 border-t'></div>";for(let d=1;d<=n;d++){let ds=`${y}-${String(m+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`,bs=S.bookings.filter(b=>["Pending Deposit","Confirmed"].includes(b.status)&&b.pickupDate<=ds&&b.returnDate>=ds);h+=`<div class="min-h-24 border-t p-2"><b>${d}</b>${bs.slice(0,3).map(b=>`<button class="block w-full text-right text-[10px] bg-slate-800 text-white rounded mt-1 px-1 truncate" data-detail="${b.bookingId}">${esc(b.carName)}</button>`).join("")}</div>`}$("#calgrid").innerHTML=h;$("#cpv").onclick=()=>{S.cal=new Date(y,m-1,1);calendar()};$("#cnx").onclick=()=>{S.cal=new Date(y,m+1,1);calendar()};$$("[data-detail]").forEach(x=>x.onclick=()=>detail(x.dataset.detail))}
+function customers(){$("#adminContent").innerHTML=`<h2 class="text-2xl font-black mb-4">العملاء</h2><div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">${Object.values(S.bookings.reduce((a,b)=>{let p=b.customer?.phone||"";if(!p)return a;if(!a[p])a[p]={name:b.customer.name,phone:p,n:0,total:0,last:b.createdAt};a[p].n++;a[p].total+=+b.grandTotal;a[p].last=b.createdAt>a[p].last?b.createdAt:a[p].last;return a},{})).map(c=>`<div class=card><div class=p-5><b>${esc(c.name)}</b><p class=text-sm>${esc(c.phone)}</p><p class="mt-3">${c.n} حجوزات<br>${money(c.total)} إجمالي<br><small>آخر حجز: ${fmt(c.last)}</small></p></div></div>`).join("")||"<div class='card p-10'>لا توجد بيانات عملاء.</div>"}</div>`}
+function payments(){$("#adminContent").innerHTML=`<h2 class="text-2xl font-black mb-4">المدفوعات</h2><div class=grid>${S.bookings.map(b=>`<div class="card p-4 flex flex-wrap gap-3 items-center"><b>${esc(b.bookingId)}</b><span>${money(b.grandTotal)}</span><span>مدفوع: ${money(b.amountPaid)}</span><span>متبقي: ${money(b.remaining)}</span><button class="btn l" data-pay="${b.bookingId}">إضافة دفعة</button></div>`).join("")}</div>`;$$("[data-pay]").forEach(x=>x.onclick=()=>pay(x.dataset.pay))}
+function pay(id){let b=S.bookings.find(x=>x.bookingId===id);openM("إضافة دفعة",`<p>المتبقي: ${money(b.remaining)}</p><input id=pa type=number min=1 max="${b.remaining}" class="w-full border rounded-xl p-3 mt-3"><button id=ps class="btn p w-full mt-3">حفظ</button>`);$("#ps").onclick=async()=>{let n=+$("#pa").value;if(!n||n>b.remaining){toast("قيمة غير صحيحة.","e");return}try{if(configured()){let r=await api("addPayment",{bookingId:id,amount:n});if(!r.success)throw Error()}b.amountPaid=+b.amountPaid+n;b.remaining=Math.max(0,+b.grandTotal-b.amountPaid);save();closeM();renderAdmin();toast("تم تسجيل الدفعة.","s")}catch{toast("تعذر حفظ الدفعة.","e")}}}
+function settings(){$("#adminContent").innerHTML=`<h2 class="text-2xl font-black mb-4">الإعدادات</h2><form id=setForm class="card p-5 grid md:grid-cols-2 gap-3">${["officeName","logo","phone","whatsapp","address","mapsUrl","facebookUrl","instagramUrl","websiteUrl","vodafoneCash","instapay","driverDailyRate","defaultDeposit","driverDepositAdjustment","currency","accentColor","bookingTerms","privacyPolicy"].map(k=>`<label class="${["bookingTerms","privacyPolicy"].includes(k)?"md:col-span-2":""}">${k}<input id=x_${k} type="${k==="accentColor"?"color":typeof S.settings[k]==="number"?"number":"text"} value="${esc(S.settings[k]??"")}" class="w-full border rounded-xl p-3 mt-1"></label>`).join("")}<label class="flex gap-2"><input id=xd type=checkbox ${S.settings.driverChangesDeposit?"checked":""}> السائق يغيّر العربون</label><button class="btn p md:col-span-2">حفظ</button></form><div class="bg-amber-50 p-4 rounded-xl text-sm mt-4"><b>تنبيه أمني:</b> PIN في المتصفح ليس مصادقة آمنة. للاستخدام التجاري استخدم Firebase/Supabase/مصادقة خادم.</div>`;$("#setForm").onsubmit=async e=>{e.preventDefault();let n={};Object.keys(S.settings).forEach(k=>{let el=$("#x_"+k);if(el)n[k]=["driverDailyRate","defaultDeposit","driverDepositAdjustment"].includes(k)?+el.value:el.value});n.driverChangesDeposit=$("#xd").checked;try{if(configured()){let r=await api("saveSettings",{settings:n});if(!r.success)throw Error()}S.settings={...S.settings,...n};save();apply();renderAdmin();renderCars();toast("تم حفظ الإعدادات.","s")}catch{toast("تعذر حفظ الإعدادات.","e")}}}
+function backup(){$("#adminContent").innerHTML=`<h2 class="text-2xl font-black">النسخ الاحتياطي وQR</h2>${configured()?'<p class="text-sm text-amber-700 mt-2">التصدير يشمل البيانات التي تم تحميلها. الاستيراد وإعادة الضبط يؤثران على بيانات هذا المتصفح فقط، ولا يغيران قاعدة بيانات الخادم.</p>':""}<div class="grid md:grid-cols-3 gap-4 mt-5"><button id=bo class="card p-6 text-right"><b>⬇ تصدير نسخة JSON</b></button><label class="card p-6"><b>⬆ استيراد نسخة محلية</b><input id=bi type=file accept=.json class="mt-3 w-full"></label><button id=reset class="card p-6 text-right text-red-600"><b>⚠ مسح بيانات هذا المتصفح</b></button></div><div class="card p-5 mt-5"><b>QR Code للحجز</b><div id=qr class=mt-4></div><button id=pqr class="btn l mt-3">طباعة QR</button></div>`;$("#bo").onclick=()=>download(JSON.stringify({cars:S.cars,bookings:S.bookings,customers:S.customers,settings:S.settings},null,2),"backup.json","application/json");$("#bi").onchange=async e=>{try{let x=JSON.parse(await e.target.files[0].text());if(!Array.isArray(x.cars)||!Array.isArray(x.bookings)||!x.settings||!confirm("استبدال البيانات المحلية لهذا المتصفح؟"))return;if(configured()){toast("لا يمكن استيراد النسخة إلى قاعدة بيانات الخادم من هذه الشاشة.","w");return}S.cars=x.cars;S.bookings=x.bookings;S.customers=x.customers||[];S.settings={...DEF,...x.settings};save();apply();renderAdmin();renderCars();toast("تمت استعادة النسخة المحلية.","s")}catch{toast("الملف غير صالح.","e")}};$("#reset").onclick=()=>{if(confirm("تحذير: حذف البيانات المحلية؟")&&confirm("تأكيد نهائي؟")){Object.values(K).forEach(k=>localStorage.removeItem(k));location.reload()}};new QRCode($("#qr"),{text:location.href,width:180,height:180});$("#pqr").onclick=()=>{$("#print").innerHTML=`<div dir=rtl style="text-align:center;font-family:Cairo"><h1>${esc(S.settings.officeName)}</h1><div id=pq></div><h2>امسح الكود لحجز سيارتك</h2></div>`;new QRCode($("#pq"),{text:location.href,width:260,height:260});setTimeout(()=>print(),100)}}
+function manual(){openM("حجز يدوي",`<form id=mf class=grid md:grid-cols-2 gap-3><label>العميل<input id=mn required class="w-full border p-3 rounded-xl"></label><label>الهاتف<input id=mp required class="w-full border p-3 rounded-xl"></label><label>السيارة<select id=mcx class="w-full border p-3 rounded-xl">${S.cars.map(c=>`<option value=${c.id}>${esc(c.name)}</option>`).join("")}</select></label><label>السائق<select id=md class="w-full border p-3 rounded-xl"><option value=false>بدون سائق</option><option value=true>بسائق</option></select></label><label>الاستلام<input id=ms type=datetime-local required class="w-full border p-3 rounded-xl"></label><label>التسليم<input id=me type=datetime-local required class="w-full border p-3 rounded-xl"></label><label>المدفوع<input id=mpa type=number value=0 min=0 class="w-full border p-3 rounded-xl"></label><label>الحالة<select id=mst class="w-full border p-3 rounded-xl"><option>Pending Deposit</option><option>Confirmed</option><option>Completed</option><option>Rejected</option></select></label><label class=md:col-span-2>ملاحظات<textarea id=mnots class="w-full border p-3 rounded-xl"></textarea></label><button class="btn p md:col-span-2">إنشاء</button></form>`);$("#mf").onsubmit=async e=>{e.preventDefault();let c=S.cars.find(x=>x.id===$("#mcx").value),a=new Date($("#ms").value),z=new Date($("#me").value),d=$("#md").value==="true";if(!c||z<=a||conflict(c.id,a,z)){toast("الحجز غير صحيح أو متعارض.","e");return}let t=totals(c,a,z,d),paid=+$("#mpa").value||0,b={id:uid("book"),requestId:uid("req"),bookingId:bookingNo(),createdAt:new Date().toISOString(),status:$("#mst").value,customer:{name:$("#mn").value,phone:norm($("#mp").value),whatsapp:norm($("#mp").value),nationalId:"",address:"",email:""},carId:c.id,carName:c.name,pickupDate:$("#ms").value.slice(0,10),pickupTime:$("#ms").value.slice(11,16),returnDate:$("#me").value.slice(0,10),returnTime:$("#me").value.slice(11,16),pickupDateTime:a.toISOString(),returnDateTime:z.toISOString(),rentalDays:t.days,driver:d,carDailyRate:c.pricePerDay,driverDailyRate:d?S.settings.driverDailyRate:0,carTotal:t.carTotal,driverTotal:t.driverTotal,additionalFees:0,discount:0,grandTotal:t.grand,requiredDeposit:t.deposit,amountPaid:paid,remaining:Math.max(0,t.grand-paid),paymentMethod:"cash",senderPhone:"",documents:{},adminNotes:$("#mnots").value};try{if(configured()){let r=await api("createManualBooking",{booking:b});if(!r.success)throw Error();b.bookingId=r.bookingId||b.bookingId}S.bookings.push(b);save();closeM();renderAdmin();toast("تم إنشاء الحجز اليدوي.","s")}catch{toast("تعذر إنشاء الحجز.","e")}}}
+function csv(){
+  const headers=[
+    "Booking ID","Date Created","Customer Name","Phone","WhatsApp","National ID",
+    "Address","Email","Car","Model Year","Pickup Date","Pickup Time",
+    "Return Date","Return Time","Rental Days","With Driver","Payment Method",
+    "Company Payment Number/Account","Total Price","Deposit Required",
+    "Payment Screenshot","Booking Status","Admin Notes"
+  ];
+
+  const rows=S.bookings.map(b=>[
+    b.bookingId||"",
+    b.createdAt||"",
+    b.customer?.name||"",
+    b.customer?.phone||"",
+    b.customer?.whatsapp||"",
+    b.customer?.nationalId||"",
+    b.customer?.address||"",
+    b.customer?.email||"",
+    b.carName||"",
+    S.cars.find(c=>c.id===b.carId)?.modelYear||"",
+    b.pickupDate||"",
+    b.pickupTime||"",
+    b.returnDate||"",
+    b.returnTime||"",
+    b.rentalDays??"",
+    b.driver?"Yes":"No",
+    b.paymentMethod||"",
+    b.paymentMethod==="vodafone"?(S.settings.vodafoneCash||VODAFONE_CASH_NUMBER):(S.settings.instapay||""),
+    b.grandTotal??"",
+    b.requiredDeposit??"",
+    (typeof b.documents?.paymentReceipt==="string"?b.documents.paymentReceipt:(b.documents?.paymentReceipt?"Uploaded":"")),
+    b.status||"",
+    b.adminNotes||""
+  ]);
+
+  const escCsv=x=>`"${String(x??"").replace(/"/g,'""').replace(/\r?\n/g," ")}"`;
+  const content="\ufeff"+[headers,...rows].map(r=>r.map(escCsv).join(",")).join("\r\n");
+  download(content,`helawey-bookings-${today()}.csv`,"text/csv;charset=utf-8");
+  toast(`تم تصدير ${rows.length} طلب حجز إلى ملف CSV.`,"s");
+}
+function download(c,n,t){let a=document.createElement("a");a.href=URL.createObjectURL(new Blob([c],{type:t}));a.download=n;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function printB(b){$("#print").innerHTML=`<div dir=rtl style="font-family:Cairo"><h1>${esc(S.settings.officeName)}</h1><h2>إيصال حجز</h2><p>رقم الحجز: <b>${esc(b.bookingId)}</b></p><p>العميل: ${esc(b.customer?.name)} — ${esc(b.customer?.phone)}</p><p>السيارة: ${esc(b.carName)}</p><p>${fmt(b.pickupDateTime)} → ${fmt(b.returnDateTime)}</p><p>المدة: ${b.rentalDays} أيام — ${b.driver?"بسائق":"بدون سائق"}</p><hr><p>السيارة: ${money(b.carTotal)}</p><p>السائق: ${money(b.driverTotal)}</p><p>الإجمالي: ${money(b.grandTotal)}</p><p>العربون: ${money(b.requiredDeposit)}</p><p>المدفوع: ${money(b.amountPaid)}</p><p>المتبقي: ${money(b.remaining)}</p><p>${esc(S.settings.phone)}</p></div>`;print()}
+
+function bindAdminControls(){
+  const adminBtn=$("#adminBtn"), adminBtn2=$("#adminBtn2"), menuBtn=$("#menuBtn");
+  if(adminBtn) adminBtn.addEventListener("click", window.adminOpen);
+  if(adminBtn2) adminBtn2.addEventListener("click", window.adminOpen);
+  if(menuBtn) menuBtn.addEventListener("click",()=>$("#menu").classList.toggle("hidden"));
+  const loginBtn=$("#loginBtn");
+  if(loginBtn) loginBtn.addEventListener("click",async()=>{
+    const pin=$("#pin")?.value||"";loginBtn.disabled=true;
+    try{
+      if(configured()){
+        const r=await api("adminLogin",{pin});
+        if(!r.success){toast(r.error==="LOCKED"?"محاولات كثيرة، حاول بعد ١٠ دقائق.":r.error==="SET_PIN"?"يجب تغيير رمز PIN داخل Code.gs أولاً.":"رمز PIN غير صحيح.","e");return}
+        sessionStorage.setItem("carRental_token",r.token);sessionStorage.setItem(K.session,"1");
+        try{await sync()}catch{sessionStorage.removeItem("carRental_token");sessionStorage.removeItem(K.session);toast("تم تسجيل الدخول لكن تعذر تحميل بيانات الإدارة. تحقق من اتصال الخادم ثم أعد المحاولة.","e");return}
+        window.adminOpen();
+      }else if(pin===ADMIN_PIN){sessionStorage.setItem(K.session,"1");window.adminOpen();}
+      else toast("رمز PIN غير صحيح.","e");
+    }catch{toast("تعذر الاتصال بالخادم.","e")}finally{loginBtn.disabled=false}
+  });
+  const pin=$("#pin");
+  if(pin) pin.addEventListener("keydown",e=>{if(e.key==="Enter") $("#loginBtn")?.click()});
+  const showPin=$("#showPin");
+  if(showPin) showPin.addEventListener("click",()=>{pin.type=pin.type==="password"?"text":"password";showPin.textContent=pin.type==="password"?"إظهار":"إخفاء"});
+  const logout=$("#logout");
+  if(logout) logout.addEventListener("click",()=>{sessionStorage.removeItem(K.session);sessionStorage.removeItem("carRental_token");$("#panel").classList.add("hidden");$("#login").classList.remove("hidden")});
+  const refresh=$("#refresh");
+  if(refresh) refresh.addEventListener("click",async()=>{try{await sync();renderAdmin();toast("تم التحديث.","s")}catch{toast("تعذر الاتصال بالخادم.","e")}});
+  const mc=$("#mc"); if(mc) mc.addEventListener("click",closeM);
+}
+
+document.addEventListener("click",e=>{let x=e.target.closest("[data-book]");if(x){let c=S.cars.find(c=>c.id===x.dataset.book);if(c)openBook(c)}let t=e.target.closest("[data-tab]");if(t){S.tab=t.dataset.tab;renderAdmin()}let p=e.target.closest("[data-prev]");if(p)setStep(+p.dataset.prev);let c=e.target.closest("[data-close]");if(c)$("#"+c.dataset.close).classList.add("hidden")});
+$("#s2").onclick=()=>setStep(2);$("#s3").onclick=()=>{if(valid2())setStep(3)};$("#s4").onclick=()=>{if(valid3()){setStep(4);renderPay()}};$("#bookForm").onsubmit=submitBook;$("#submit").onclick=()=>submitBook({preventDefault(){}});["pd","pt","rd","rt"].forEach(id=>$("#"+id).onchange=()=>valid2(true));$$('input[name=driver]').forEach(x=>x.onchange=()=>valid2(true));$("#termsBtn").onclick=()=>openM("الشروط والخصوصية",`<p class=leading-8>${esc(S.settings.bookingTerms)}</p><hr class=my-4><p class=leading-8>${esc(S.settings.privacyPolicy)}</p>`);$("#successClose").onclick=()=>$("#success").classList.add("hidden");$("#successPrint").onclick=()=>S.last&&printB(S.last);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")["success","admin","modal"].forEach(id=>$("#"+id).classList.add("hidden"))});
+let idle;function lock(){clearTimeout(idle);if(sessionStorage.getItem(K.session))idle=setTimeout(()=>{sessionStorage.removeItem(K.session);sessionStorage.removeItem("carRental_token");$("#panel").classList.add("hidden");$("#login").classList.remove("hidden");toast("تم قفل لوحة الإدارة بسبب عدم النشاط.","w")},15*60*1000)}["click","keydown","touchstart"].forEach(x=>document.addEventListener(x,lock,{passive:true}));
+bindAdminControls();
+(async()=>{load();apply();renderCars();if(configured())try{await sync()}catch(e){S.apiUnavailable=true;S.cars=[];S.bookings=[];S.busy=[];apply();renderCars();toast("تعذر الاتصال بالخادم. تم إيقاف الحجز حتى يعود الاتصال.","e")}lock()})();
+</script></body></html>
+
+
