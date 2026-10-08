@@ -19,7 +19,7 @@ input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid v
 .print{display:none}@media print{body>*{display:none!important}.print{display:block!important}@page{margin:12mm}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 @media(max-width:640px){.btn{min-height:44px}.card{border-radius:1rem}#booking>div{margin-top:0;margin-bottom:0;min-height:100%}#booking{padding:.5rem}}
-</style>
+@media(max-width:640px){input[type="date"],input[type="time"]{min-height:56px;font-size:16px!important;color:#172033;background-color:#f8fafc;color-scheme:light;direction:ltr;text-align:left}#booking{padding:.5rem;padding-bottom:calc(env(safe-area-inset-bottom,0px) + .5rem)}#booking>div{margin:0 auto;min-height:0;height:calc(100vh - 1rem);max-height:calc(100vh - 1rem);display:flex;flex-direction:column}#booking>div>div:first-child,#booking>div>div:nth-child(2){flex-shrink:0}#bookForm{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding-bottom:calc(1rem + env(safe-area-inset-bottom,0px))}}@supports(height:100dvh){@media(max-width:640px){#booking>div{height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 1rem);max-height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 1rem)}}}</style>
 </head>
 <body class="bg-white">
 <header class="bg-[#0b1b2b] text-white"><div class="max-w-7xl mx-auto px-4 py-2 flex justify-between text-sm"><span id="phoneTop">010XXXXXXXX</span><a id="waTop" target="_blank" rel="noopener" class="text-green-300">واتساب</a></div></header>
