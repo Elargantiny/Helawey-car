@@ -60,18 +60,18 @@ input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid v
 // ============================================================
 // =====================================================
 // CHANGE DEFAULT ADMIN PIN HERE
-// Default PIN: 1234
+// No local demo PIN is configured.
 // (Local demo mode only. When GOOGLE_APPS_SCRIPT_URL is set, the PIN is checked on the server and this value is unused.)
 // IMPORTANT: Client-side PIN protection is NOT real
 // security. For production use, move authentication
 // to the backend / Firebase / Supabase / Apps Script.
 // =====================================================
-const ADMIN_PIN="1234";
-const VODAFONE_CASH_NUMBER="01092851077";
-const INSTAPAY_HANDLE="CASH-HelaweyCarRental";
+const ADMIN_PIN="";
+const VODAFONE_CASH_NUMBER="";
+const INSTAPAY_HANDLE="";
 const GOOGLE_APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbz1o52sctL97R5JQijSHJZJJJJzzNw9VpYDzYSdw3L_zgFFEX1Arfrq_KfJAUirqTip/exec";
-const OFFICE_WHATSAPP="01092851077";
-const OFFICE_PHONE="01092851077";
+const OFFICE_WHATSAPP="";
+const OFFICE_PHONE="";
 const CURRENCY="EGP";
 
 const K={cars:"carRental_cars",bookings:"carRental_bookings",settings:"carRental_settings",customers:"carRental_customers",session:"carRental_session",pending:"carRental_pendingSync"};
@@ -305,7 +305,7 @@ function bindAdminControls(){
         sessionStorage.setItem("carRental_token",r.token);sessionStorage.setItem(K.session,"1");
         try{await sync()}catch{sessionStorage.removeItem("carRental_token");sessionStorage.removeItem(K.session);toast("تم تسجيل الدخول لكن تعذر تحميل بيانات الإدارة. تحقق من اتصال الخادم ثم أعد المحاولة.","e");return}
         window.adminOpen();
-      }else if(pin===ADMIN_PIN){sessionStorage.setItem(K.session,"1");window.adminOpen();}
+      }else if(ADMIN_PIN&&pin===ADMIN_PIN){sessionStorage.setItem(K.session,"1");window.adminOpen();}
       else toast("رمز PIN غير صحيح.","e");
     }catch{toast("تعذر الاتصال بالخادم.","e")}finally{loginBtn.disabled=false}
   });
