@@ -1,0 +1,3 @@
+function toast(m,t="i"){let x=document.createElement("div");x.className="bg-[#0b1b2b] text-white p-3 rounded-xl shadow-lg text-sm font-bold";if(t==="s")x.className="bg-green-600 text-white p-3 rounded-xl shadow-lg text-sm font-bold";if(t==="e")x.className="bg-red-600 text-white p-3 rounded-xl shadow-lg text-sm font-bold";if(t==="w")x.className="bg-amber-500 text-white p-3 rounded-xl shadow-lg text-sm font-bold";x.textContent=m;$("#toasts").append(x);setTimeout(()=>x.remove(),4000)}
+function openM(t,b){$("#mt").textContent=t;$("#mb").innerHTML=b;$("#modal").classList.remove("hidden")}
+function closeM(){$("#modal").classList.add("hidden")}
