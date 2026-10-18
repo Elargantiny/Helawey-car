@@ -1,39 +1,37 @@
 # Helawey Car Rental — Frontend
 
-The frontend is organized into small files while preserving the existing Arabic-first interface, English toggle, booking flow, admin panel, and Google Apps Script API contract. The original app uses browser JavaScript, so this structure keeps it framework-free instead of introducing a React rewrite that could change working behavior.
+The frontend is organized into small browser JavaScript modules while preserving the Arabic-first interface, English toggle, booking flow, admin panel, and Google Apps Script API contract.
 
 ## Project structure
 
+This repository's deployment root is the repository root (there is no `frontend/` subdirectory).
+
 ```text
-frontend/
-├── index.html                     # Page markup and stylesheet/script references
-├── package.json                   # Rebuild command for Tailwind CSS
-├── tailwind.config.js             # Content scan and RTL/LTR variants
-├── tailwind.input.css             # Tailwind build input
-├── public/
-│   ├── hellawy-car-logo.png       # Site logo
-│   └── tailwind.css               # Generated, minified styles
-└── src/
-    ├── app.js                     # Event wiring and startup
-    ├── assets/site.css            # Site-specific CSS
-    ├── components/
-    │   ├── booking/booking.js      # Booking steps, payment, submit, WhatsApp
-    │   ├── cars/carCatalog.js     # Car list and loading skeletons
-    │   └── common/
-    │       ├── feedback.js         # Toasts and modal helpers
-    │       └── site.js             # Public settings and contact links
-    ├── context/app-state.js       # App configuration and shared state
-    ├── i18n/translations.js       # Arabic/English dictionary
-    ├── pages/admin/admin.js       # Admin dashboard and management screens
-    ├── services/
-    │   ├── api.js                 # Apps Script requests and synchronization
-    │   └── storage.js             # Local cache and browser storage
-    └── utils/calculatePrice.js   # Dates, phone normalization, totals, conflicts
+index.html
+package.json
+tailwind.config.js
+tailwind.input.css
+public/
+  hellawy-car-logo.png
+  tailwind.css
+src/
+  app.js
+  assets/site.css
+  components/booking/booking.js
+  components/cars/carCatalog.js
+  components/common/feedback.js
+  components/common/site.js
+  context/app-state.js
+  i18n/translations.js
+  pages/admin/admin.js
+  services/api.js
+  services/storage.js
+  utils/calculatePrice.js
 ```
 
 ## Rebuild the CSS
 
-Run these commands from the `frontend` directory:
+Run these commands from the repository root:
 
 ```bash
 npm install
@@ -48,4 +46,4 @@ npx tailwindcss -c ./tailwind.config.js -i ./tailwind.input.css -o ./public/tail
 
 ## Hosting
 
-Use `frontend` as the static site's root directory. Include `index.html`, `public/`, and `src/` in the deployment so the relative script and asset links resolve. The Apps Script URL remains configured in `src/context/app-state.js`.
+Use the repository root as the static site's root directory. The page loads assets from `public/` and scripts from `src/` through relative paths. The Apps Script URL remains configured in `src/context/app-state.js`.
